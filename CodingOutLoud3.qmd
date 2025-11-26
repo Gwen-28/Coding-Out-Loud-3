@@ -3,12 +3,35 @@ title: "CodingOutLoud3"
 author: "Gwen Peterson"
 format: html
 ---
-Getting stuff
+## Getting stuff
+
 ```{r}
 library(tidyverse)
 library(ggplot2)
 library(ggforce)
 ```
+
+## Task 1: Draw a Circle
+
+```{r}
+#Making the data
+circle <- data_frame(
+  x1 = 1,
+  y1 = 1,
+  r = 1
+)
+
+#plotting
+ggplot() +
+  geom_circle(
+    aes(x0 = x1, y0 = y1, r = r),
+    data = circle,
+    fill = "black",
+  ) +
+  coord_fixed()
+```
+
+## Task 2: many circles in a line
 
 
 ```{r}
