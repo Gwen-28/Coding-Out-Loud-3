@@ -33,6 +33,26 @@ ggplot() +
 
 ## Task 2: many circles in a line
 
+```{r}
+circles <- tibble(
+  x1 = rep(1,9),
+  x2 = seq(-0.2, 0.2, length.out = 9),
+  y = seq(-1, 1, length.out = 9),
+  x3 = sin(y) / 4,
+  r1 = 1,
+  r2 = (-(y^2) + 2) / 20
+)
+  
+ggplot() +
+  geom_circle(
+    aes(x0 = x3, y0 = y, r = r2),
+    data = circles,
+    fill = "black",
+  ) +
+  coord_fixed() +
+  theme_void()
+```
+
 
 ```{r}
 ids <- factor(c("1.1", "2.1", "1.2", "2.2", "1.3", "2.3"))
